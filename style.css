@@ -881,3 +881,10 @@ img {
   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s;
 }
+
+.portfolio-thumb {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 0.5rem;
+}
