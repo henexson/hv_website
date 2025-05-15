@@ -870,18 +870,22 @@ img {
 }
 
 #one-page-menu .nav-link {
-  display: block;
+  text-decoration: none !important; /* removes underline */
   color: #333;
+  display: block;
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
-  text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
-  position: relative;
 }
 
-/* Active state */
-#one-page-menu .nav-link.active,
+/* Blue box highlight on hover */
 #one-page-menu .nav-link:hover {
+  background-color: var(--bs-primary-dark);
+  color: #fff;
+}
+
+/* Blue box when active */
+#one-page-menu .nav-link.active {
   background-color: var(--bs-primary);
   color: #fff;
 }
@@ -895,18 +899,5 @@ img {
 }
 
 #one-page-menu .nav-link::after {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  margin-top: 0.3rem;
-  width: 0;
-  height: 2px;
-  background-color: var(--bs-primary-dark);
-  transition: width 0.3s ease;
+  content: none; /* disable underline bar if it was there */
 }
-
-/* Expand underline only when active */
-#one-page-menu .nav-link.active::after {
-  width: 60%;
-}
-
