@@ -40,16 +40,16 @@ CSS STRUCTURE:
   --bs-body-color: #333;
   --bs-body-color-rgb: 51, 51, 51;
 
-  --bs-primary: #89CFF0;
-  --bs-primary-dark: #72bde2;
-  --bs-secondary: #5ea7cc;
+  --bs-primary: #5bb4e5;
+  --bs-primary-dark: #3da3db;
+  --bs-secondary: #2e8dc5;
   --bs-black: #111;
   --bs-light: #F1F1F0;
   --bs-dark: #212529;
   --bs-gray: #949494;
   --bs-gray-dark: #51565b;
 
-  --bs-primary-rgb: 137, 207, 240;
+  --bs-primary-rgb: 91, 180, 229;
   --bs-secondary-rgb: 253, 238, 233;
   --bs-black-rgb: 17, 17, 17;
   --bs-light-rgb: 241, 241, 240;
@@ -892,4 +892,11 @@ img {
 .card a:hover svg {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:hover {
+  background-color: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary) var(--bs-primary) #fff;
 }
