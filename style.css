@@ -893,3 +893,14 @@ img {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
 }
+
+.btn-baby-blue {
+  background-color: #89CFF0;
+  color: #fff;
+  border: none;
+}
+
+.btn-baby-blue:hover {
+  background-color: #72bde2;
+  color: #fff;
+}
