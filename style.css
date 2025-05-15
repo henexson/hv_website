@@ -894,23 +894,15 @@ img {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Style active tab */
-.nav-tabs .nav-link.active {
+#one-page-menu .nav-link.active {
   background-color: var(--bs-primary);
   color: #fff;
-  border-color: var(--bs-primary);
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
 }
 
-/* Style hover */
-.nav-tabs .nav-link:hover {
+#one-page-menu .nav-link:hover {
   background-color: var(--bs-primary-dark);
   color: #fff;
-  border-color: var(--bs-primary-dark);
-}
-
-.nav-tabs .nav-link {
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
-  color: #333;
-  border: 1px solid transparent;
+  border-radius: 0.375rem;
 }
