@@ -714,6 +714,33 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script async src="//www.instagram.com/embed.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("#one-page-menu .nav-link");
+
+    function onScroll() {
+      let scrollPos = window.scrollY + 200; // adjust offset for early activation
+      sections.forEach((section) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        const id = section.getAttribute("id");
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+  });
+</script>
+
 </body>
 
 </html>
