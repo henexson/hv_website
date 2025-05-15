@@ -282,14 +282,14 @@ p {
 }
 
 /* end of Bootstrap Color Theme */
-@media (min-width: 1200px) {
+@media (max-width: 576px) {
 
   .container,
   .container-lg,
   .container-md,
   .container-sm,
   .container-xl {
-    max-width: 1440px;
+    font-size: 0.875rem;
   }
 }
 
@@ -391,7 +391,7 @@ header {
   top: 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 576px) {
 
   /* mobile menu */
   header {
