@@ -894,9 +894,23 @@ img {
   transition: transform 0.2s ease-in-out;
 }
 
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link:hover {
+/* Style active tab */
+.nav-tabs .nav-link.active {
   background-color: var(--bs-primary);
   color: #fff;
-  border-color: var(--bs-primary) var(--bs-primary) #fff;
+  border-color: var(--bs-primary);
+}
+
+/* Style hover */
+.nav-tabs .nav-link:hover {
+  background-color: var(--bs-primary-dark);
+  color: #fff;
+  border-color: var(--bs-primary-dark);
+}
+
+.nav-tabs .nav-link {
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  color: #333;
+  border: 1px solid transparent;
 }
