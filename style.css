@@ -940,3 +940,61 @@ img {
   }
 }
 
+.accordion-gallery {
+  width: 100%;
+  overflow: hidden;
+}
+
+.accordion-container {
+  display: flex;
+  height: 60vh;
+  min-height: 400px;
+}
+
+.accordion-panel {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.4s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion-panel:hover {
+  flex: 4;
+}
+
+.panel-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* MOBILE STYLE: stack panels and disable hover effect */
+@media (max-width: 768px) {
+  .accordion-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .accordion-panel {
+    flex: none;
+    height: 200px;
+    width: 100%;
+  }
+
+  .accordion-panel:hover {
+    flex: none;
+  }
+
+  .panel-overlay {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+  }
+}
