@@ -1014,7 +1014,6 @@ img {
   letter-spacing: 1px;
 }
 
-/* Title */
 .panel-title {
   color: #ffffff; /* pure white */
   font-size: 1.75rem;
@@ -1022,26 +1021,15 @@ img {
   font-weight: bold;
 }
 
-/* Subtitle */
 .panel-subtitle {
-  color: #cccccc; /* soft grey */
+  color: #cccccc; /* slightly darker grey */
   font-size: 0.9rem;
-  opacity: 1; /* remove transparency for better mobile readability */
+  opacity: 0.9; /* you can remove or adjust opacity if needed */
   margin: 0;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .accordion-container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .accordion-panel {
-    flex: none;
-    height: 300px;
-  }
-
   .panel-overlay {
     transform: translateY(0);
     opacity: 1;
