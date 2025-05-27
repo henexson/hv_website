@@ -833,18 +833,18 @@
   document.addEventListener("DOMContentLoaded", () => {
     const panels = document.querySelectorAll('.accordion-panel');
 
-    // Only activate scroll behavior on small screens
     if (window.innerWidth <= 768) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            // Remove expanded state from all panels
+            panels.forEach(p => p.classList.remove('active-scroll'));
+            // Expand the one currently in view
             entry.target.classList.add('active-scroll');
-          } else {
-            entry.target.classList.remove('active-scroll');
           }
         });
       }, {
-        threshold: 0.5
+        threshold: 0.6 // Trigger when 60% of the panel is visible
       });
 
       panels.forEach(panel => observer.observe(panel));
