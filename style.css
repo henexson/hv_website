@@ -1014,15 +1014,15 @@ img {
   letter-spacing: 1px;
 }
 
-/* Title */
 .panel-title {
+  color: #ffffff; /* pure white */
   font-size: 1.75rem;
   margin: 0.25rem 0;
   font-weight: bold;
 }
 
-/* Subtitle */
 .panel-subtitle {
+  color: #cccccc; /* slightly darker grey */
   font-size: 0.9rem;
   opacity: 0.9;
   margin: 0;
