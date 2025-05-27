@@ -1031,16 +1031,23 @@ img {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .accordion-container {
+    display: flex;
     flex-direction: column;
-    height: auto; /* let it grow naturally */
+    height: auto;
   }
 
   .accordion-panel {
     flex: none;
-    height: 200px;
     width: 100%;
+    height: 200px;
+    position: relative; 
   }
 
+  .accordion-panel.active-mobile {
+    height: 350px;
+    transition: height 0.4s ease;
+  }
+    
   .panel-overlay {
     transform: translateY(0);
     opacity: 1;
