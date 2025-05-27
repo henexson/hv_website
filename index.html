@@ -760,65 +760,92 @@
   <script src="js/script.js"></script>
   <script async src="//www.instagram.com/embed.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("#one-page-menu .nav-link");
-
-    function onScroll() {
-      let scrollPos = window.scrollY + 200; // adjust offset for early activation
-      sections.forEach((section) => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        const id = section.getAttribute("id");
-
-        if (scrollPos >= top && scrollPos < bottom) {
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === `#${id}`) {
-              link.classList.add("active");
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener("scroll", onScroll);
-  });
-</script>
-
-<script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // stop default submission
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json"
-        }
-      });
-
-      if (response.ok) {
-        form.reset(); // clear form
-        status.style.display = "block"; // show confirmation
-        status.innerText = "✅ Thank you! Your message has been sent.";
-      } else {
-        throw new Error("Form submission failed.");
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("#one-page-menu .nav-link");
+  
+      function onScroll() {
+        let scrollPos = window.scrollY + 200; // adjust offset for early activation
+        sections.forEach((section) => {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+          const id = section.getAttribute("id");
+  
+          if (scrollPos >= top && scrollPos < bottom) {
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
       }
-    } catch (error) {
-      status.style.display = "block";
-      status.classList.remove("text-success");
-      status.classList.add("text-danger");
-      status.innerText = "❌ Oops! Something went wrong. Please try again later.";
+  
+      window.addEventListener("scroll", onScroll);
+    });
+  </script>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+  
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault(); // stop default submission
+  
+      const formData = new FormData(form);
+  
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+  
+        if (response.ok) {
+          form.reset(); // clear form
+          status.style.display = "block"; // show confirmation
+          status.innerText = "✅ Thank you! Your message has been sent.";
+        } else {
+          throw new Error("Form submission failed.");
+        }
+      } catch (error) {
+        status.style.display = "block";
+        status.classList.remove("text-success");
+        status.classList.add("text-danger");
+        status.innerText = "❌ Oops! Something went wrong. Please try again later.";
+      }
+    });
+  </script>
+
+  <script>
+    const panels = document.querySelectorAll('.accordion-panel');
+  
+    if (window.innerWidth <= 768) {
+      panels.forEach(panel => {
+        panel.addEventListener('click', () => {
+          // Collapse others
+          panels.forEach(p => {
+            if (p !== panel) p.classList.remove('active-mobile');
+          });
+          // Expand this one
+          panel.classList.toggle('active-mobile');
+        });
+      });
     }
-  });
-</script>
+  </script>
+  
+  <style>
+    /* Optional mobile expansion class */
+    @media (max-width: 768px) {
+      .accordion-panel.active-mobile {
+        height: 350px;
+        transition: height 0.4s ease;
+      }
+    }
+  </style>
 
 </body>
 
