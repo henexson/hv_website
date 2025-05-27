@@ -958,12 +958,30 @@ img {
   transition: flex 0.4s ease-in-out;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
+/* Expand on hover (desktop) */
 .accordion-panel:hover {
   flex: 4;
 }
 
+/* Gradient overlay on hover */
+.accordion-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.accordion-panel:hover::before {
+  opacity: 1;
+}
+
+/* Caption fade-in */
 .panel-overlay {
   position: absolute;
   bottom: 0;
@@ -974,9 +992,18 @@ img {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* MOBILE STYLE: stack panels and disable hover effect */
+.accordion-panel:hover .panel-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive behavior */
 @media (max-width: 768px) {
   .accordion-container {
     flex-direction: column;
@@ -984,16 +1011,18 @@ img {
   }
 
   .accordion-panel {
-    flex: none;
     height: 200px;
-    width: 100%;
+    flex: none !important;
   }
 
-  .accordion-panel:hover {
-    flex: none;
+  /* Always show overlay and mask on mobile */
+  .accordion-panel::before {
+    opacity: 1;
   }
 
   .panel-overlay {
+    opacity: 1;
+    transform: none;
     font-size: 1.2rem;
     padding: 0.75rem;
   }
