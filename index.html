@@ -830,21 +830,24 @@
   </script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const panels = document.querySelectorAll(".accordion-panel");
+  document.addEventListener("DOMContentLoaded", () => {
+    const panels = document.querySelectorAll('.accordion-panel');
 
+    // Only activate scroll behavior on small screens
     if (window.innerWidth <= 768) {
-      panels.forEach((panel, index) => {
-        panel.addEventListener("click", () => {
-          panels.forEach(p => p.classList.remove("active-mobile"));
-          panel.classList.add("active-mobile");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active-scroll');
+          } else {
+            entry.target.classList.remove('active-scroll');
+          }
         });
-
-        // Open first panel by default
-        if (index === 0) {
-          panel.classList.add("active-mobile");
-        }
+      }, {
+        threshold: 0.5
       });
+
+      panels.forEach(panel => observer.observe(panel));
     }
   });
 </script>
