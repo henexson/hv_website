@@ -1091,3 +1091,13 @@ img {
   height: 100%;
 }
 
+@media (max-width: 991.98px) {
+  #header-nav {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  }
+
+  body {
+    overflow: auto;
+  }
+}
