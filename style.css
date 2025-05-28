@@ -1068,3 +1068,26 @@ img {
     font-size: 0.65rem;
   }
 }
+
+.sidebar-contact i {
+  font-size: 1.2rem;
+  color: var(--bs-dark); /* or white if on a dark sidebar */
+  transition: color 0.3s ease;
+}
+
+.sidebar-contact i:hover {
+  color: var(--bs-primary);
+}
+
+.sidebar-contact ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.header-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
