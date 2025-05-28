@@ -1042,6 +1042,8 @@ img {
     height: 120px;
     transition: height 0.5s ease;
     position: relative;
+    cursor: default;
+    pointer-events: none;
   }
 
   .accordion-panel.active-scroll {
