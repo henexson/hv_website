@@ -193,13 +193,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Video 1 -->
                 <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
-                    <iframe 
-                        class="w-full h-full min-h-[300px]" 
-                        src="https://www.youtube.com/embed/i8HO5wAEbfE" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <div class="youtube-placeholder w-full h-full min-h-[300px] bg-black">
+                        <img src="https://img.youtube.com/vi/i8HO5wAEbfE/maxresdefault.jpg" alt="YouTube video thumbnail" class="w-full h-full object-cover">
+                    </div>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                         <button class="bg-black/90 text-grey-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
