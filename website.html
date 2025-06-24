@@ -197,7 +197,7 @@
                         <img src="https://img.youtube.com/vi/i8HO5wAEbfE/maxresdefault.jpg" alt="YouTube video thumbnail" class="w-full h-full object-cover">
                     </div>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-black/90 text-grey-900 rounded-full p-3 hover:bg-black transition">
+                        <button class="play-button bg-black/90 text-grey-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -621,19 +621,87 @@
             mobileMenu.classList.toggle('hidden');
         });
         
-        // Video hover play
-        const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+        // Video play/pause functionality
+        const videos = document.querySelectorAll('.video-thumbnail video');
         
-        videoThumbnails.forEach(thumbnail => {
-            const video = thumbnail.querySelector('video');
+        videos.forEach(video => {
+            const thumbnail = video.closest('.video-thumbnail');
+            const playButton = thumbnail.querySelector('.play-button');
+            const icon = playButton?.querySelector('i');
             
-            thumbnail.addEventListener('mouseenter', () => {
-                video.play();
+            // Click on video to toggle play/pause
+            video.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    if (icon) icon.classList.replace('fa-play', 'fa-pause');
+                    thumbnail.classList.add('playing');
+                } else {
+                    video.pause();
+                    if (icon) icon.classList.replace('fa-pause', 'fa-play');
+                    thumbnail.classList.remove('playing');
+                }
             });
             
-            thumbnail.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
+            // Play button click handler
+            if (playButton) {
+                playButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (video.paused) {
+                        video.play();
+                        icon.classList.replace('fa-play', 'fa-pause');
+                        thumbnail.classList.add('playing');
+                    } else {
+                        video.pause();
+                        icon.classList.replace('fa-pause', 'fa-play');
+                        thumbnail.classList.remove('playing');
+                    }
+                });
+            }
+            
+            // Update icon when video ends
+            video.addEventListener('ended', () => {
+                if (icon) icon.classList.replace('fa-pause', 'fa-play');
+                thumbnail.classList.remove('playing');
+            });
+        });
+
+        // YouTube video play functionality
+        document.querySelectorAll('.youtube-play-button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const videoId = button.getAttribute('data-video-id');
+                const thumbnail = button.closest('.video-thumbnail');
+                const placeholder = thumbnail.querySelector('.youtube-placeholder');
+                
+                // Replace placeholder with iframe
+                placeholder.innerHTML = `
+                    <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                `;
+                
+                // Hide play button
+                button.style.display = 'none';
+            });
+        });
+
+        // Pause all other videos when one plays
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('play', () => {
+                document.querySelectorAll('video').forEach(otherVideo => {
+                    if (otherVideo !== video && !otherVideo.paused) {
+                        otherVideo.pause();
+                        const otherThumbnail = otherVideo.closest('.video-thumbnail');
+                        const otherButton = otherThumbnail.querySelector('.play-button');
+                        const otherIcon = otherButton.querySelector('i');
+                        otherIcon.classList.replace('fa-pause', 'fa-play');
+                        otherThumbnail.classList.remove('playing');
+                    }
+                });
             });
         });
         
