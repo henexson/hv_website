@@ -52,7 +52,7 @@
         
         .video-thumbnail {
             aspect-ratio: 16/9;
-            height: 200px;
+            height: 225px;
         }
         
         .video-thumbnail video {
@@ -705,46 +705,6 @@
             video.addEventListener('ended', () => {
                 if (icon) icon.classList.replace('fa-pause', 'fa-play');
                 thumbnail.classList.remove('playing');
-            });
-        });
-
-        // YouTube video play functionality
-        document.querySelectorAll('.youtube-play-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const videoId = button.getAttribute('data-video-id');
-                const thumbnail = button.closest('.video-thumbnail');
-                const placeholder = thumbnail.querySelector('.youtube-placeholder');
-                
-                // Replace placeholder with iframe
-                placeholder.innerHTML = `
-                    <iframe 
-                        class="w-full h-full" 
-                        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                `;
-                
-                // Hide play button
-                button.style.display = 'none';
-            });
-        });
-
-        // Pause all other videos when one plays
-        document.querySelectorAll('video').forEach(video => {
-            video.addEventListener('play', () => {
-                document.querySelectorAll('video').forEach(otherVideo => {
-                    if (otherVideo !== video && !otherVideo.paused) {
-                        otherVideo.pause();
-                        const otherThumbnail = otherVideo.closest('.video-thumbnail');
-                        const otherButton = otherThumbnail.querySelector('.play-button');
-                        const otherIcon = otherButton.querySelector('i');
-                        otherIcon.classList.replace('fa-pause', 'fa-play');
-                        otherThumbnail.classList.remove('playing');
-                    }
-                });
             });
         });
         
