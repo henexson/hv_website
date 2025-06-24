@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HenexsonVisuals - Professional Videography Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-video {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        }
+        
+        .video-thumbnail {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail:hover video {
+            transform: scale(1.05);
+        }
+        
+        .video-thumbnail video {
+            transition: all 0.3s ease;
+        }
+        
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+        }
+        
+        .reveal-left {
+            transform: translateX(-100px);
+        }
+        
+        .reveal-left.active {
+            transform: translateX(0);
+        }
+        
+        .reveal-right {
+            transform: translateX(100px);
+        }
+        
+        .reveal-right.active {
+            transform: translateX(0);
+        }
+        
+        .reveal-up {
+            transform: translateY(50px);
+        }
+        
+        .reveal-up.active {
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(147, 197, 253, 0.2);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(147, 197, 253, 0.2);
+        }
+        
+        .contact-input {
+            background-color: rgba(31, 41, 55, 0.7);
+            border: 1px solid #4b5563;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            border-color: #93c5fd;
+            box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3);
+        }
+        
+        .btn-primary {
+            background-color: #ffffff;
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e5e7eb;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(147, 197, 253, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-video {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-white">HenexsonVisuals</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-white transition">Home</a>
+                        <a href="#portfolio" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Portfolio</a>
+                        <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Services</a>
+                        <a href="#testimonials" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Testimonials</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden bg-slate-900/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-300 transition">Home</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Portfolio</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Services</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-video relative flex items-center justify-center">
+        <div class="absolute inset-0 overflow-hidden">
+            <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-dancing-under-neon-lights-1230-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h1 class="reveal reveal-up text-4xl md:text-6xl font-bold mb-4">Capture Your <span class="text-white">Moments</span></h1>
+            <p class="reveal reveal-up text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Professional videography services for events, weddings, commercials, and more. Let us tell your story through stunning visuals.</p>
+            <div class="reveal reveal-up flex justify-center space-x-4">
+                <a href="#portfolio" class="btn-primary px-6 py-3 rounded-full font-medium">View Portfolio</a>
+                <a href="#contact" class="btn-outline px-6 py-3 rounded-full font-medium">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4 text-white">Our <span class="text-blue-300">Portfolio</span></h2>
+                <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Browse through our latest work and see how we've captured special moments for our clients.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
+                    <video muted loop class="w-full h-auto">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-dancing-under-neon-lights-1230-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
+                    <video muted loop class="w-full h-auto">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-standing-in-front-of-a-window-4054-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
+                    <video muted loop class="w-full h-auto">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-concert-audience-enjoying-music-406-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
+                    <video muted loop class="w-full h-auto">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-man-and-woman-sitting-on-a-bench-talking-4060-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video 5 -->
+                <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
+                    <video muted loop class="w-full h-auto">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-a-running-track-4055-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Video 6 -->
+                <div class="video-thumbnail reveal reveal-up rounded-xl overflow-hidden relative group">
+                    <video muted loop class="w-full h-auto">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-a-running-track-4055-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal reveal-up">
+                <a href="#" class="btn-outline px-8 py-3 rounded-full font-medium">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Our <span class="text-blue-300">Services</span></h2>
+                <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">We offer a wide range of videography services to meet your needs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="reveal reveal-left service-card bg-gray-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Wedding Videography</h3>
+                    <p class="text-gray-400 mb-4">Capture every special moment of your big day with our cinematic wedding videography services.</p>
+                    <div class="text-blue-300 font-medium">
+                        <p>Starting at $1,500</p>
+                        <p class="text-sm text-gray-500">(Includes 8 hours of coverage + basic edit)</p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="reveal reveal-up service-card bg-slate-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Event Videography</h3>
+                    <p class="text-gray-400 mb-4">Professional coverage of corporate events, parties, and special occasions.</p>
+                    <div class="text-blue-300 font-medium">
+                        <p>$100/hour (filming)</p>
+                        <p class="text-sm text-gray-500">(+ $75/hour for editing)</p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="reveal reveal-right service-card bg-slate-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Commercial Content</h3>
+                    <p class="text-gray-400 mb-4">High-quality promotional videos for your business or product.</p>
+                    <div class="text-blue-300 font-medium">
+                        <p>Starting at $800</p>
+                        <p class="text-sm text-gray-500">(30-60 second spot)</p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="reveal reveal-left service-card bg-slate-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Concert Coverage</h3>
+                    <p class="text-gray-400 mb-4">Dynamic footage of live performances and music events.</p>
+                    <div class="text-blue-300 font-medium">
+                        <p>$150/hour (filming)</p>
+                        <p class="text-sm text-gray-500">(+ $100/hour for editing)</p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="reveal reveal-up service-card bg-slate-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Documentary Style</h3>
+                    <p class="text-gray-400 mb-4">In-depth storytelling through documentary filmmaking.</p>
+                    <div class="text-blue-300 font-medium">
+                        <p>Custom Pricing</p>
+                        <p class="text-sm text-gray-500">(Based on project scope)</p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="reveal reveal-right service-card bg-slate-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fas fa-photo-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Full Production</h3>
+                    <p class="text-gray-400 mb-4">Complete video production from concept to final delivery.</p>
+                    <div class="text-blue-300 font-medium">
+                        <p>Custom Pricing</p>
+                        <p class="text-sm text-gray-500">(Includes pre-production, filming, and editing)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center reveal reveal-up">
+                <p class="text-gray-400 mb-4">Don't see exactly what you're looking for?</p>
+                <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-medium">Custom Request</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Client <span class="text-blue-300">Testimonials</span></h2>
+                <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Hear what our clients have to say about working with HenexsonVisuals.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="reveal reveal-left testimonial-card bg-slate-800 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"HenexsonVisuals captured our wedding day perfectly. The video was so beautiful it made us cry. They were professional and unobtrusive throughout the entire day."</p>
+                    <div class="flex items-center">
+                        <div class="bg-white text-black rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">JS</div>
+                        <div>
+                            <h4 class="font-bold">Jessica & Sam</h4>
+                            <p class="text-sm text-gray-500">Wedding Clients</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="reveal reveal-up testimonial-card bg-slate-800 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The commercial they produced for our business exceeded all expectations. The quality was professional and it helped increase our sales by 30% in the first month!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-300 text-slate-900 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">MR</div>
+                        <div>
+                            <h4 class="font-bold">Michael Roberts</h4>
+                            <p class="text-sm text-gray-500">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="reveal reveal-right testimonial-card bg-slate-800 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"We've worked with many videographers for our music events, but HenexsonVisuals stands out. They captured the energy of our concert perfectly and delivered quickly."</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-300 text-slate-900 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">EP</div>
+                        <div>
+                            <h4 class="font-bold">Elena Parker</h4>
+                            <p class="text-sm text-gray-500">Event Organizer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-blue-300">Touch</span></h2>
+                <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Ready to discuss your project? Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="reveal reveal-left">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-300">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" required class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-300">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-300">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-1">Service Interested In</label>
+                            <select id="service" name="service" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-300">
+                                <option value="">Select a service</option>
+                                <option value="wedding">Wedding Videography</option>
+                                <option value="event">Event Videography</option>
+                                <option value="commercial">Commercial Content</option>
+                                <option value="concert">Concert Coverage</option>
+                                <option value="documentary">Documentary Style</option>
+                                <option value="production">Full Production</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-300"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full py-3 rounded-lg font-medium">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="reveal reveal-right">
+                    <div class="bg-slate-900 rounded-xl p-8 h-full">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-white text-xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Email</h4>
+                                    <a href="mailto:gshenexson@gmail.com" class="text-gray-400 hover:text-blue-300 transition">gshenexson@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-300 text-xl mr-4 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Phone</h4>
+                                    <p class="text-gray-400">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-300 text-xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Location</h4>
+                                    <p class="text-gray-400">Serving clients nationwide</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-300 text-xl mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Availability</h4>
+                                    <p class="text-gray-400">Monday - Friday: 9am - 6pm</p>
+                                    <p class="text-gray-400">Weekends: By appointment</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                    <i class="fab fa-vimeo-v"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold text-white mb-4">HenexsonVisuals</h3>
+                    <p class="text-gray-400">Professional videography services to capture your most important moments.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-300 transition">Home</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-blue-300 transition">Portfolio</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-300 transition">Services</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-blue-300 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-300 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Weddings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Commercials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Concerts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Documentaries</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get updates on our latest work and special offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="contact-input px-4 py-2 rounded-l-lg w-full focus:outline-none">
+                        <button type="submit" class="bg-blue-300 text-slate-900 px-4 py-2 rounded-r-lg font-medium">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 HenexsonVisuals. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-blue-300 transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-blue-300 transition text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Video hover play
+        const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+        
+        videoThumbnails.forEach(thumbnail => {
+            const video = thumbnail.querySelector('video');
+            
+            thumbnail.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            
+            thumbnail.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+        
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        }
+        
+        window.addEventListener('scroll', reveal);
+        
+        // Initialize reveal on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            reveal();
+            
+            // Trigger animations for elements already in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {threshold: 0.1});
+            
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send this data to your server
+            // For this example, we'll just log it and show an alert
+            console.log({
+                name,
+                email,
+                phone,
+                service,
+                message
+            });
+            
+            // Send email (this would be handled by your backend in a real application)
+            // For demo purposes, we're just showing an alert
+            alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon at ${email}.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
