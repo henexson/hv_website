@@ -25,14 +25,41 @@
         .video-thumbnail {
             transition: all 0.3s ease;
             overflow: hidden;
+            background-color: #111;
+            position: relative;
+        }
+        
+        .video-thumbnail::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #222 25%, #333 25%, #333 50%, #222 50%, #222 75%, #333 75%);
+            background-size: 40px 40px;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .video-thumbnail.loaded::before {
+            display: none;
         }
         
         .video-thumbnail:hover video {
-            transform: scale(1.05);
+            transform: scale(1.03);
+        }
+        
+        .video-thumbnail {
+            aspect-ratio: 16/9;
+            height: 250px;
         }
         
         .video-thumbnail video {
             transition: all 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .reveal {
@@ -279,7 +306,7 @@
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">We offer a wide range of videography services to meet your needs.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6">
                 <!-- Service 1 -->
                 <div class="reveal reveal-left service-card bg-gray-900 rounded-xl p-8 transition duration-300">
                     <div class="text-white text-4xl mb-4">
@@ -624,6 +651,21 @@
         
         // Video play/pause functionality
         const videos = document.querySelectorAll('.video-thumbnail video');
+        
+        // Handle video loading
+        videos.forEach(video => {
+            const thumbnail = video.closest('.video-thumbnail');
+            video.addEventListener('loadeddata', () => {
+                thumbnail.classList.add('loaded');
+            });
+            
+            // Fallback in case loadeddata doesn't fire
+            setTimeout(() => {
+                if (!thumbnail.classList.contains('loaded')) {
+                    thumbnail.classList.add('loaded');
+                }
+            }, 1000);
+        });
         
         videos.forEach(video => {
             const thumbnail = video.closest('.video-thumbnail');
