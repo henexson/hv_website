@@ -71,7 +71,7 @@
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(147, 197, 253, 0.2);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.08);
         }
         
         .testimonial-card {
@@ -80,7 +80,7 @@
         
         .testimonial-card:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(147, 197, 253, 0.2);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.08);
         }
         
         .contact-input {
@@ -91,8 +91,8 @@
         
         .contact-input:focus {
             outline: none;
-            border-color: #93c5fd;
-            box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.3);
+            border-color: #fff;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.15);
         }
         
         .btn-primary {
@@ -113,7 +113,7 @@
         }
         
         .btn-outline:hover {
-            background-color: rgba(147, 197, 253, 0.1);
+            background-color: rgba(255,255,255,0.05);
             transform: translateY(-2px);
         }
         
@@ -126,7 +126,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
@@ -154,13 +154,13 @@
         </div>
         
         <!-- Mobile menu -->
-        <div class="mobile-menu hidden md:hidden bg-slate-900/95 backdrop-blur-md">
+        <div class="mobile-menu hidden md:hidden bg-gray-900/95 backdrop-blur-md">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-300 transition">Home</a>
-                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Portfolio</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Services</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Testimonials</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-300 transition">Contact</a>
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-white transition">Home</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Portfolio</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Services</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white transition">Contact</a>
             </div>
         </div>
     </nav>
@@ -186,7 +186,7 @@
     <section id="portfolio" class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4 text-white">Our <span class="text-blue-300">Portfolio</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4 text-white">Our <span class="text-white">Portfolio</span></h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Browse through our latest work and see how we've captured special moments for our clients.</p>
             </div>
             
@@ -197,7 +197,7 @@
                         <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-dancing-under-neon-lights-1230-large.mp4" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                        <button class="bg-black/90 text-slate-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -209,7 +209,7 @@
                         <source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-standing-in-front-of-a-window-4054-large.mp4" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                        <button class="bg-black/90 text-slate-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -221,7 +221,7 @@
                         <source src="https://assets.mixkit.co/videos/preview/mixkit-concert-audience-enjoying-music-406-large.mp4" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                        <button class="bg-black/90 text-slate-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -233,7 +233,7 @@
                         <source src="https://assets.mixkit.co/videos/preview/mixkit-man-and-woman-sitting-on-a-bench-talking-4060-large.mp4" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                        <button class="bg-black/90 text-slate-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -245,7 +245,7 @@
                         <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-a-running-track-4055-large.mp4" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                        <button class="bg-black/90 text-slate-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -257,7 +257,7 @@
                         <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-a-running-track-4055-large.mp4" type="video/mp4">
                     </video>
                     <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                        <button class="bg-blue-300/90 text-slate-900 rounded-full p-3 hover:bg-blue-300 transition">
+                        <button class="bg-black/90 text-slate-900 rounded-full p-3 hover:bg-black transition">
                             <i class="fas fa-play text-xl"></i>
                         </button>
                     </div>
@@ -274,7 +274,7 @@
     <section id="services" class="py-20 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Our <span class="text-blue-300">Services</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Our <span class="text-white">Services</span></h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">We offer a wide range of videography services to meet your needs.</p>
             </div>
             
@@ -286,72 +286,72 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">Wedding Videography</h3>
                     <p class="text-gray-400 mb-4">Capture every special moment of your big day with our cinematic wedding videography services.</p>
-                    <div class="text-blue-300 font-medium">
+                    <div class="text-white font-medium">
                         <p>Starting at $1,500</p>
                         <p class="text-sm text-gray-500">(Includes 8 hours of coverage + basic edit)</p>
                     </div>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="reveal reveal-up service-card bg-slate-900 rounded-xl p-8 transition duration-300">
-                    <div class="text-blue-300 text-4xl mb-4">
+                <div class="reveal reveal-up service-card bg-gray-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-white text-4xl mb-4">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Event Videography</h3>
                     <p class="text-gray-400 mb-4">Professional coverage of corporate events, parties, and special occasions.</p>
-                    <div class="text-blue-300 font-medium">
+                    <div class="text-white font-medium">
                         <p>$100/hour (filming)</p>
                         <p class="text-sm text-gray-500">(+ $75/hour for editing)</p>
                     </div>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="reveal reveal-right service-card bg-slate-900 rounded-xl p-8 transition duration-300">
-                    <div class="text-blue-300 text-4xl mb-4">
+                <div class="reveal reveal-right service-card bg-gray-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-white text-4xl mb-4">
                         <i class="fas fa-ad"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Commercial Content</h3>
                     <p class="text-gray-400 mb-4">High-quality promotional videos for your business or product.</p>
-                    <div class="text-blue-300 font-medium">
+                    <div class="text-white font-medium">
                         <p>Starting at $800</p>
                         <p class="text-sm text-gray-500">(30-60 second spot)</p>
                     </div>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="reveal reveal-left service-card bg-slate-900 rounded-xl p-8 transition duration-300">
-                    <div class="text-blue-300 text-4xl mb-4">
+                <div class="reveal reveal-left service-card bg-gray-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-white text-4xl mb-4">
                         <i class="fas fa-music"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Concert Coverage</h3>
                     <p class="text-gray-400 mb-4">Dynamic footage of live performances and music events.</p>
-                    <div class="text-blue-300 font-medium">
+                    <div class="text-white font-medium">
                         <p>$150/hour (filming)</p>
                         <p class="text-sm text-gray-500">(+ $100/hour for editing)</p>
                     </div>
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="reveal reveal-up service-card bg-slate-900 rounded-xl p-8 transition duration-300">
-                    <div class="text-blue-300 text-4xl mb-4">
+                <div class="reveal reveal-up service-card bg-gray-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-white text-4xl mb-4">
                         <i class="fas fa-film"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Documentary Style</h3>
                     <p class="text-gray-400 mb-4">In-depth storytelling through documentary filmmaking.</p>
-                    <div class="text-blue-300 font-medium">
+                    <div class="text-white font-medium">
                         <p>Custom Pricing</p>
                         <p class="text-sm text-gray-500">(Based on project scope)</p>
                     </div>
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="reveal reveal-right service-card bg-slate-900 rounded-xl p-8 transition duration-300">
-                    <div class="text-blue-300 text-4xl mb-4">
+                <div class="reveal reveal-right service-card bg-gray-900 rounded-xl p-8 transition duration-300">
+                    <div class="text-white text-4xl mb-4">
                         <i class="fas fa-photo-video"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Full Production</h3>
                     <p class="text-gray-400 mb-4">Complete video production from concept to final delivery.</p>
-                    <div class="text-blue-300 font-medium">
+                    <div class="text-white font-medium">
                         <p>Custom Pricing</p>
                         <p class="text-sm text-gray-500">(Includes pre-production, filming, and editing)</p>
                     </div>
@@ -369,7 +369,7 @@
     <section id="testimonials" class="py-20 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Client <span class="text-blue-300">Testimonials</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Client <span class="text-white">Testimonials</span></h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Hear what our clients have to say about working with HenexsonVisuals.</p>
             </div>
             
@@ -408,7 +408,7 @@
                     </div>
                     <p class="text-gray-300 mb-6">"The commercial they produced for our business exceeded all expectations. The quality was professional and it helped increase our sales by 30% in the first month!"</p>
                     <div class="flex items-center">
-                        <div class="bg-blue-300 text-slate-900 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">MR</div>
+                        <div class="bg-black text-slate-900 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">MR</div>
                         <div>
                             <h4 class="font-bold">Michael Roberts</h4>
                             <p class="text-sm text-gray-500">Business Owner</p>
@@ -429,7 +429,7 @@
                     </div>
                     <p class="text-gray-300 mb-6">"We've worked with many videographers for our music events, but HenexsonVisuals stands out. They captured the energy of our concert perfectly and delivered quickly."</p>
                     <div class="flex items-center">
-                        <div class="bg-blue-300 text-slate-900 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">EP</div>
+                        <div class="bg-black text-slate-900 rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl mr-4">EP</div>
                         <div>
                             <h4 class="font-bold">Elena Parker</h4>
                             <p class="text-sm text-gray-500">Event Organizer</p>
@@ -444,7 +444,7 @@
     <section id="contact" class="py-20 bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-blue-300">Touch</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-white">Touch</span></h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Ready to discuss your project? Fill out the form below and we'll get back to you within 24 hours.</p>
             </div>
             
@@ -490,7 +490,7 @@
                 </div>
                 
                 <div class="reveal reveal-right">
-                    <div class="bg-slate-900 rounded-xl p-8 h-full">
+                    <div class="bg-gray-900 rounded-xl p-8 h-full">
                         <h3 class="text-xl font-bold mb-6">Contact Information</h3>
                         
                         <div class="space-y-6">
@@ -500,12 +500,12 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium mb-1">Email</h4>
-                                    <a href="mailto:gshenexson@gmail.com" class="text-gray-400 hover:text-blue-300 transition">gshenexson@gmail.com</a>
+                                    <a href="mailto:gshenexson@gmail.com" class="text-gray-400 hover:text-white transition">gshenexson@gmail.com</a>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="text-blue-300 text-xl mr-4 mt-1">
+                                <div class="text-white text-xl mr-4 mt-1">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
@@ -515,7 +515,7 @@
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="text-blue-300 text-xl mr-4 mt-1">
+                                <div class="text-white text-xl mr-4 mt-1">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
@@ -525,7 +525,7 @@
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="text-blue-300 text-xl mr-4 mt-1">
+                                <div class="text-white text-xl mr-4 mt-1">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <div>
@@ -539,16 +539,16 @@
                         <div class="mt-8">
                             <h4 class="font-medium mb-4">Follow Us</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                     <i class="fab fa-facebook"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                     <i class="fab fa-youtube"></i>
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-blue-300 transition text-xl">
+                                <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                     <i class="fab fa-vimeo-v"></i>
                                 </a>
                             </div>
@@ -571,22 +571,22 @@
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-blue-300 transition">Home</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-blue-300 transition">Portfolio</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-blue-300 transition">Services</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-blue-300 transition">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-blue-300 transition">Contact</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Weddings</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Events</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Commercials</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Concerts</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-blue-300 transition">Documentaries</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Weddings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Commercials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Concerts</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Documentaries</a></li>
                     </ul>
                 </div>
                 
@@ -595,7 +595,7 @@
                     <p class="text-gray-400 mb-4">Subscribe to get updates on our latest work and special offers.</p>
                     <form class="flex">
                         <input type="email" placeholder="Your email" class="contact-input px-4 py-2 rounded-l-lg w-full focus:outline-none">
-                        <button type="submit" class="bg-blue-300 text-slate-900 px-4 py-2 rounded-r-lg font-medium">
+                        <button type="submit" class="bg-black text-slate-900 px-4 py-2 rounded-r-lg font-medium">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
@@ -605,8 +605,8 @@
             <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 HenexsonVisuals. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-500 hover:text-blue-300 transition text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-500 hover:text-blue-300 transition text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition text-sm">Terms of Service</a>
                 </div>
             </div>
         </div>
