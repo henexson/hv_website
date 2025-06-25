@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HenexsonVisuals - Professional Videography Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.cdnfonts.com/css/switzer');
@@ -572,6 +573,124 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-black text-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">Frequently Asked Questions</span>
+          </h2>
+          <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Find answers to common questions about my videography services.</p>
+        </div>
+    
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">1. What types of videography services do you offer?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              I specialize in wedding videography, event coverage, commercial content, concert footage, documentary-style films, and full production services from concept to final delivery.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 2 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">2. How far in advance should I book a session?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              For weddings, I recommend booking 6–12 months in advance. Other events should be booked at least 1–3 months ahead. Last-minute bookings may be available depending on my schedule.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 3 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">3. Do you travel for shoots?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              Yes! I'm available for travel within the Omaha–Council Bluffs area at no extra charge. For destinations beyond this area, travel expenses will be quoted based on the project requirements.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 4 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">4. How much do your services cost?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              Pricing varies based on project scope. Wedding packages start at $1,500, event coverage at $100/hour, and commercial projects at $800 for a 30–60 second spot. Contact me for a custom quote.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 5 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">5. How long does it take to complete a video project?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              Turnaround time depends on project complexity. Simple edits take 1–2 weeks, while full productions may take 4–8 weeks. Rush services are available for an additional fee.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 6 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">6. Can I request changes after the first draft?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              Absolutely! Each package includes 2 rounds of revisions. Additional revisions can be accommodated for an hourly editing fee.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 7 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">7. What equipment do you use?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              I shoot with professional 4K cinema cameras, gimbals for smooth movement, drones for aerial shots, and high-quality audio equipment to ensure premium results.
+            </div>
+          </div>
+    
+          <!-- FAQ Item 8 -->
+          <div x-data="{ open: false }" class="bg-gray-900 rounded-xl p-4">
+            <button @click="open = !open" class="w-full flex justify-between items-center text-left">
+              <span class="font-semibold text-lg">8. What's your cancellation policy?</span>
+              <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div x-show="open" x-collapse class="mt-2 text-gray-400">
+              A 50% deposit is required to book. Cancellations made 30+ days before the event receive a full refund. Within 30 days, the deposit is non-refundable but can be applied to future services.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
