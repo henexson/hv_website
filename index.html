@@ -71,6 +71,101 @@
         .reveal.active {
             opacity: 1;
         }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            width: 0;
+        }
+
+        .typewriter.active {
+            animation: typing 3.5s steps(40, end) forwards, blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: white }
+        }
+
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 red;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 blue;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(32px, 9999px, 28px, 0) }
+            20% { clip: rect(13px, 9999px, 80px, 0) }
+            40% { clip: rect(56px, 9999px, 99px, 0) }
+            60% { clip: rect(42px, 9999px, 78px, 0) }
+            80% { clip: rect(28px, 9999px, 87px, 0) }
+            100% { clip: rect(82px, 9999px, 53px, 0) }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(65px, 9999px, 119px, 0) }
+            20% { clip: rect(74px, 9999px, 14px, 0) }
+            40% { clip: rect(68px, 9999px, 61px, 0) }
+            60% { clip: rect(92px, 9999px, 100px, 0) }
+            80% { clip: rect(14px, 9999px, 33px, 0) }
+            100% { clip: rect(60px, 9999px, 16px, 0) }
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px) }
+            50% { transform: translateY(-10px) }
+            100% { transform: translateY(0px) }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #aaa, #fff);
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center }
+        }
         
         .reveal-left {
             transform: translateX(-100px);
@@ -200,7 +295,9 @@
             </video>
         </div>
         <div class="relative z-10 text-center px-4">
-            <h1 class="reveal reveal-up text-4xl md:text-6xl font-bold mb-4">Capture Your <span class="text-white">Vision</span></h1>
+            <h1 class="reveal reveal-up text-4xl md:text-6xl font-bold mb-4">
+                <span class="typewriter">Capture Your <span class="text-white">Vision</span></span>
+            </h1>
             <p class="reveal reveal-up text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">Professional videography services for events, weddings, commercials, and more. Let me tell your story through stunning visuals.</p>
             <div class="reveal reveal-up flex justify-center space-x-4">
                 <a href="#portfolio" class="btn-primary px-6 py-3 rounded-full font-medium">View Portfolio</a>
@@ -213,7 +310,9 @@
     <section id="portfolio" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4 text-white">My <span class="text-white">Portfolio</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">
+                    <span class="glitch" data-text="My Portfolio">My <span class="text-white">Portfolio</span></span>
+                </h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Browse through my latest work and see how I've captured special moments for my clients.</p>
             </div>
             
@@ -293,7 +392,7 @@
             </div>
             
             <div class="text-center mt-12 reveal reveal-up">
-                <a href="#" class="btn-outline px-8 py-3 rounded-full font-medium">View More</a>
+                <a href="#contact" class="btn-outline px-8 py-3 rounded-full font-medium">Get Started</a>
             </div>
         </div>
     </section>
@@ -302,7 +401,9 @@
     <section id="services" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">My <span class="text-white">Services</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">
+                    <span class="float">My <span class="text-white">Services</span></span>
+                </h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">I offer a wide range of videography services to meet your needs.</p>
             </div>
             
@@ -397,7 +498,9 @@
     <section id="testimonials" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Client <span class="text-white">Testimonials</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">
+                    Client <span class="gradient-text">Testimonials</span>
+                </h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Hear what my clients have to say about working with HenexsonVisuals.</p>
             </div>
             
@@ -472,7 +575,9 @@
     <section id="contact" class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-white">Touch</span></h2>
+                <h2 class="reveal reveal-up text-3xl md:text-4xl font-bold mb-4">
+                    <span class="typewriter">Get In <span class="text-white float">Touch</span></span>
+                </h2>
                 <p class="reveal reveal-up text-gray-400 max-w-2xl mx-auto">Ready to discuss your project? Fill out the form below and I'll get back to you within 24 hours.</p>
             </div>
             
@@ -730,6 +835,14 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
+                        
+                        // Start typewriter animation
+                        const typewriter = entry.target.querySelector('.typewriter');
+                        if (typewriter) {
+                            setTimeout(() => {
+                                typewriter.classList.add('active');
+                            }, 300);
+                        }
                     }
                 });
             }, {threshold: 0.1});
@@ -737,6 +850,19 @@
             document.querySelectorAll('.reveal').forEach(el => {
                 observer.observe(el);
             });
+
+            // Random glitch effects
+            setInterval(() => {
+                const glitches = document.querySelectorAll('.glitch');
+                glitches.forEach(glitch => {
+                    if (Math.random() > 0.7) {
+                        glitch.classList.add('glitching');
+                        setTimeout(() => {
+                            glitch.classList.remove('glitching');
+                        }, 500);
+                    }
+                });
+            }, 3000);
         });
         
         // Contact form submission
